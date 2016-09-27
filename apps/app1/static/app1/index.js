@@ -1,4 +1,4 @@
-    <script>
+ $(document).ready(function(){
     	var map, bounds, projection, zoom;
 
       	function initMap() {
@@ -64,5 +64,5 @@
 	 		// TODO: make icon show after picking up and before getting to map div
 	        }
 	    });
-     
-    </script>
+     }
+ 
