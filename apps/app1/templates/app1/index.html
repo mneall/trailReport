@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <title>Simple Map</title>
+	    {% load staticfiles %}
+	    <meta name="viewport" content="initial-scale=1.0">
+	    <meta charset="utf-8">
+	    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+	    <link rel="stylesheet" href="{% static 'app1/index.css' %}" media="screen" title="no title"  charset="utf-8">
+	    <link rel="stylesheet" href="{% static 'app1/bootstrap.min.css' %}" media="screen" title="no title"  charset="utf-8">
+	    <link rel="stylesheet" href="{% static 'app1/jquery-ui.css' %}" media="screen" title="no title"  charset="utf-8">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	    <script href="{% static 'app1/index.js' %}"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpMMWmE80NE0XNELZq7Pf_XKMw3WsYRf4&callback=initMap"
+	    async defer></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<nav class="navbar navbar-light bg-faded">
+	  			<a class="navbar-brand" href="#">Map Tools</a>
+	  			<ul class="nav navbar-nav navbar-right">
+	 				<li>
+	 					<a class="navbar-brand" href="#">Register</a>
+	  				</li>
+	  				<li>
+	  					<a class="navbar-brand" href="#">Log In</a>
+	  				</li>
+	  			</ul>
+	  		</nav>
+
+	    	<div id="map"></div>
+
+			<div id="tools">
+	        	<i class="draggable fa fa-map-marker fa-3x" aria-hidden="true"></i>
+	        	<i class="draggable fa fa-car fa-3x" aria-hidden="true"></i>
+	        	<i class="draggable fa fa-map-signs fa-3x" aria-hidden="true"></i>
+	    	</div>
+		</div>
+	</body>
+</html>
