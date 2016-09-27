@@ -1,0 +1,40 @@
+body {
+  margin: 0 auto;
+  background-image: url("background-13.jpg");
+  background-size: 100%;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+#map {
+  display: inline-block;
+  height: 500px;
+  width: 100%;
+  margin-top: 2%;
+  opacity: 0.95;
+  box-shadow: 0 0 12px 3px #666;
+      }
+
+.headernav {
+  margin-left: 50px;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: transparent;
+}
+
+#tools {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+i {
+  color: orange;
+  margin-right: 25px;
+}
+
+span.glyphicon {
+    font-size: 4.0em;
+}
