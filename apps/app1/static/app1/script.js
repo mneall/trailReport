@@ -1,27 +1,31 @@
-$(document).ready(function(){
+// $(document).ready(function(){
  		
 	var map, bounds, projection, zoom;
 
-  	function initMap() {
+  	function initMap(callback) {
   		var marker;
     	map = new google.maps.Map(document.getElementById('map'), {
       	zoom: 8,
       	center: {lat: 47.608013, lng: -122.335167}
       	// TODO: add infowindow to markers, add custom markers
-    });
+    	});
 
-    marker = new google.maps.Marker({
-		map: map,
-		draggable: true,
-		animation: google.maps.Animation.DROP,
-		position: {lat: 47.608013, lng: -122.335167}
-    });
+    	marker = new google.maps.Marker({
+			map: map,
+			draggable: true,
+			animation: google.maps.Animation.DROP,
+			position: {lat: 47.608013, lng: -122.335167}
+    	});
 
-    google.maps.event.addListenerOnce(map, 'idle', function(){
-    	bounds = (this.getBounds());
-    	projection = (this.getProjection());
-    	zoom = (this.getZoom());
-		});
+    	google.maps.event.addListenerOnce(map, 'bounds_changed', function(){
+    		bounds = (this.getBounds());
+    		projection = (this.getProjection());
+    		zoom = (this.getZoom());
+			});
+
+    	google.maps.event.addListenerOnce(map, 'idle', function(){
+    		callback();
+			});
   	}
 
 	function pixelToLatLng (map, x, y) {
@@ -66,6 +70,6 @@ $(document).ready(function(){
         }
     });
 
-    initMap();
-});
+    // initMap();
+// });
  

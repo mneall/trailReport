@@ -9,7 +9,8 @@ body {
 }
 
 #map {
-  display: inline-block;
+  display: block;
+  visibility: hidden;
   height: 500px;
   width: 100%;
   margin-top: 2%;
