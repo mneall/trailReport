@@ -27,15 +27,42 @@ body {
 }
 
 #tools {
+  min-height: 30px;
   margin-top: 50px;
   margin-left: 50px;
 }
 
+#icon-box {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#icon-box-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
 i {
-  color: orange;
+  color: #F0594E;
   margin-right: 25px;
 }
 
 span.glyphicon {
-    font-size: 4.0em;
+    font-size: 3.0em;
+    color: orange;
+}
+
+.icon {
+  fill: #F0594E;
+  color: #F0594E;
+}
+
+.marker {
+  height: 50px;
+  width: 50px;
+}
+
+.marker-large {
+  height: 60px;
+  width: 60px;
 }
