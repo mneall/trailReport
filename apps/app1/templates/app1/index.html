@@ -17,13 +17,13 @@
 	<body>
 		<div class="container-fluid">
 			<nav class="navbar navbar-light bg-faded">
-	  			<a class="navbar-brand" href="#">Map Tools</a>
+	  			<a class="navbar-brand" href="#">trail_report</a>
 	  			<ul class="nav navbar-nav navbar-right">
 	 				<li>
-	 					<a class="navbar-brand" href="#">Register</a>
+	 					<a class="navbar-brand" href="#">register</a>
 	  				</li>
 	  				<li>
-	  					<a class="navbar-brand" href="#">Log In</a>
+	  					<a class="navbar-brand" href="#">log in</a>
 	  				</li>
 	  			</ul>
 	  		</nav>
@@ -33,18 +33,15 @@
 			<div id="tools">
 				<div id="icon-box">
 					<!-- tent icon -->
-	        		<img class="draggable marker" src="{% static 'app1/tent-red.png' %}">
+	        		<img class="draggable marker" data-icon="/static/app1/tent-red-sm.png" id="tent" src="{% static 'app1/tent-red.png' %}">
 					<!-- map marker -->
-	        		<img class="draggable marker" src="{% static 'app1/mapmarker-red.png' %}">
+	        		<img class="draggable marker" data-icon="/static/app1/mapmarker-red-sm.png" id="waypoint" src="{% static 'app1/mapmarker-red.png' %}">
 	        		<!-- signpost -->
-	        		<img class="draggable marker" src="{% static 'app1/signpost-red.png' %}">
+	        		<img class="draggable marker" data-icon="/static/app1/signpost-red-sm.png" id="signpost" src="{% static 'app1/signpost-red.png' %}">
 	        		<!-- car -->
-	        		<img class="draggable marker" src="{% static 'app1/car-red.png' %}">
+	        		<img class="draggable marker" data-icon="/static/app1/car-red-sm.png" id="car" src="{% static 'app1/car-red.png' %}">
 	        	</div>
-	        		<div id="icon-box-right">
-	        			<!-- <span class="draggable glyphicon glyphicon-tent" aria-hidden="true"></span> -->
-	        		</div>
-	    		</div>
+	  
 			</div>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="{% static 'app1/script.js' %}"></script>

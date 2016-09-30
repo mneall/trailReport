@@ -28,33 +28,20 @@ body {
 
 #tools {
   min-height: 30px;
-  margin-top: 50px;
-  margin-left: 50px;
 }
 
 #icon-box {
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
   display: inline-block;
   vertical-align: top;
+  background-color:rgba(0, 0, 0, 0.2);
 }
 
-#icon-box-right {
-  display: inline-block;
-  vertical-align: top;
-}
-
-i {
-  color: #F0594E;
-  margin-right: 25px;
-}
-
-span.glyphicon {
-    font-size: 3.0em;
-    color: orange;
-}
-
-.icon {
-  fill: #F0594E;
-  color: #F0594E;
+#icon-box #car {
+  margin-left: 12px;
 }
 
 .marker {
@@ -62,7 +49,3 @@ span.glyphicon {
   width: 50px;
 }
 
-.marker-large {
-  height: 60px;
-  width: 60px;
-}

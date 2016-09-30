@@ -1,5 +1,5 @@
  		
-	var map, infowindow, bounds, projection, zoom, icons;
+	var map, infowindow, bounds, projection, zoom;
 
   	function initMap(callback) {
     	map = new google.maps.Map(document.getElementById('map'), {
@@ -11,10 +11,6 @@
     	var windowForm = "<table>" +
                  "<tr><td>Title:</td> <td><input type='text' name='title'> </td> </tr>" +
                  "<tr><td>Description:</td> <td><textarea name='description'></textarea> </td> </tr>" +
-                 "<tr><td>Type:</td> <td><select id='type'>" +
-                 "<option value='bar' SELECTED>bar</option>" +
-                 "<option value='restaurant'>restaurant</option>" +
-                 "</select> </td></tr>" +
                  "<tr><td></td><td><input type='submit' value='Save'></td></tr>";
 		
 		infowindow = new google.maps.InfoWindow({
@@ -30,13 +26,6 @@
        	google.maps.event.addListenerOnce(map, 'idle', function(){
     		callback();
 		});
-
-		icons = {
-          car: '/static/app1/car-red-sm.png',
-          waypoint: '/static/app1/mapmarker-red-sm.png',
-          signpost: '/static/app1/signpost-red-sm.png',
-          tent:'/static/app1/tent-red-sm.png'
-        };
   	}
 
 	function pixelToLatLng (map, projection, x, y) {
@@ -58,21 +47,18 @@
 	        	var y = mouse_pos.top - map_div_border_top - map_div_pos.top;
 	        	lat_lng = pixelToLatLng(map, projection, x, y);
 
-	   		var marker = new google.maps.Marker(
+	   		ui.draggable[0].marker = new google.maps.Marker(
 	        {
 	            position: lat_lng,
 	            draggable: true,
 	            map: map,
-	            icon: icons.car,
+	            icon: ui.draggable[0].dataset.icon,
 	            zIndex: Math.round(lat_lng.lat()*-100000)<<5
 	        });
 
-			google.maps.event.addListener(marker, "click", function() {
-				infowindow.open(map, marker);
+			google.maps.event.addListener(ui.draggable[0].marker, "click", function() {
+				infowindow.open(map, ui.draggable[0].marker);
 			});
-
-			// google.maps.add_group_marker = marker;
-
 	    }
 	});
 
@@ -80,11 +66,11 @@
     {
         helper: "clone",
         appendTo: $('#map'),
-        cursorAt: { left: 10, top: 0 },
-        stop: function(event, ui)
-        {
- 		// TODO: make icon show after picking up and before getting to map div
-        }
+        cursorAt: { left: 10, top: 0} //,
+   //      stop: function(event, ui)
+   //      {
+ 		// // TODO: make icon show after picking up and before getting to map div
+   //      }
     });
 
  
