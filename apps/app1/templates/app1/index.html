@@ -25,6 +25,12 @@
 	  				<li>
 	  					<a class="navbar-brand" href="#">log in</a>
 	  				</li>
+	  				<li>
+	  					<form action="logout" method="post">
+	  						{% csrf_token %}
+	  						<input class="navbar-brand" type="submit" name="logout">
+	  					</form>
+	  				</li>
 	  			</ul>
 	  		</nav>
 
@@ -40,6 +46,8 @@
 	        		<img class="draggable marker" data-icon="/static/app1/signpost-red-sm.png" id="signpost" src="{% static 'app1/signpost-red.png' %}">
 	        		<!-- car -->
 	        		<img class="draggable marker" data-icon="/static/app1/car-red-sm.png" id="car" src="{% static 'app1/car-red.png' %}">
+	        		<!-- warning -->
+	        		<img class="draggable marker" data-icon="/static/app1/warning-red-sm.png" id="warning" src="{% static 'app1/warning-red.png' %}">
 	        	</div>
 	  
 			</div>

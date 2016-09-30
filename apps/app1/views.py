@@ -5,7 +5,7 @@ from django.contrib import messages
 def index(request):
 	print "Debug"
 	if 'user' in request.session:
-		return redirect('/index')
+		return redirect('/home')
 	return render(request, "app1/login.html")
 
 def register(request):
@@ -13,7 +13,7 @@ def register(request):
 		result = User.objects.register(request.POST)
 		if result['registered']:
 			request.session['user'] = result['newUser'].first_name
-			return redirect('/success')
+			return redirect('/home')
 		else:
 			for error in result['errors']:
 				messages.add_message(request, messages.ERROR, error)
