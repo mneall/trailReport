@@ -1,5 +1,5 @@
  		
-	var map, infowindow, bounds, projection, zoom;
+	var map, infowindow, bounds, projection, zoom, icons;
 
   	function initMap(callback) {
     	map = new google.maps.Map(document.getElementById('map'), {
@@ -9,13 +9,13 @@
     	});
 
     	var windowForm = "<table>" +
-                 "<tr><td>Name:</td> <td><input type='text' id='name'/> </td> </tr>" +
-                 "<tr><td>Address:</td> <td><input type='text' id='address'/></td> </tr>" +
+                 "<tr><td>Title:</td> <td><input type='text' name='title'> </td> </tr>" +
+                 "<tr><td>Description:</td> <td><textarea name='description'></textarea> </td> </tr>" +
                  "<tr><td>Type:</td> <td><select id='type'>" +
                  "<option value='bar' SELECTED>bar</option>" +
                  "<option value='restaurant'>restaurant</option>" +
                  "</select> </td></tr>" +
-                 "<tr><td></td><td><input type='button' value='Save & Close' onclick='saveData()'/></td></tr>";
+                 "<tr><td></td><td><input type='submit' value='Save'></td></tr>";
 		
 		infowindow = new google.maps.InfoWindow({
      		content: windowForm
@@ -30,6 +30,13 @@
        	google.maps.event.addListenerOnce(map, 'idle', function(){
     		callback();
 		});
+
+		icons = {
+          car: '/static/app1/car-red-sm.png',
+          waypoint: '/static/app1/mapmarker-red-sm.png',
+          signpost: '/static/app1/signpost-red-sm.png',
+          tent:'/static/app1/tent-red-sm.png'
+        };
   	}
 
 	function pixelToLatLng (map, projection, x, y) {
@@ -56,7 +63,7 @@
 	            position: lat_lng,
 	            draggable: true,
 	            map: map,
-	            label: "X",
+	            icon: icons.car,
 	            zIndex: Math.round(lat_lng.lat()*-100000)<<5
 	        });
 
