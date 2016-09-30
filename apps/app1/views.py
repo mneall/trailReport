@@ -36,7 +36,7 @@ def login(request):
 			'last_name': loginResult.last_name,
 			'email': loginResult.email
 			}
-			return redirect('/index')	
+			return redirect('/home')	
 
 	else:
 		return redirect('/')

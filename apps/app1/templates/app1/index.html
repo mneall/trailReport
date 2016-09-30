@@ -19,16 +19,10 @@
 			<nav class="navbar navbar-light bg-faded">
 	  			<a class="navbar-brand" href="#">trail_report</a>
 	  			<ul class="nav navbar-nav navbar-right">
-	 				<li>
-	 					<a class="navbar-brand" href="#">register</a>
-	  				</li>
-	  				<li>
-	  					<a class="navbar-brand" href="#">log in</a>
-	  				</li>
 	  				<li>
 	  					<form action="logout" method="post">
 	  						{% csrf_token %}
-	  						<input class="navbar-brand" type="submit" name="logout">
+	  						<input id="logout_button" class="navbar-brand" type="submit" name="logout" value="logout">
 	  					</form>
 	  				</li>
 	  			</ul>

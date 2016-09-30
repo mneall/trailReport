@@ -1,5 +1,17 @@
+body {
+  margin: 0 auto;
+  background-image: url("background-1-1.jpg");
+  background-size: 100%;
+}
+
 .error {
 	color: red;
 	font-weight: bold;
 	margin-left: 90px;
+}
+
+input.form-control {
+	background-color:rgba(0, 0, 0, 0.25);
+	border: none;
+	color: white;
 }
