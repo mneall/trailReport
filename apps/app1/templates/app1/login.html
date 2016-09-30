@@ -10,8 +10,11 @@
 	<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 </head>
 <body>
+	<div id="title" class="container">
+		<h1>trail_report</h1>
+	</div>
 	<div class="container">
-		<h1>Registration</h1>
+		<h3>Registration</h3>
 
 		<form class="form-horizontal" role="form" action="/register" method="post">
 			{% csrf_token %}
@@ -66,7 +69,7 @@
 	{% endfor %}
 
 	<div class="container">
-		<h1>Login</h1>
+		<h3>Login</h3>
 		<form class="form-horizontal" role="form" action="/login" method="post">
 			{% csrf_token %}
 
