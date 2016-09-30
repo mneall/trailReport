@@ -16,6 +16,7 @@ body {
   margin-top: 2%;
   opacity: 0.95;
   box-shadow: 0 0 12px 3px #666;
+  border-radius: 8px;
       }
 
 .headernav {
@@ -34,10 +35,10 @@ body {
   padding: 10px;
   width: 100%;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   display: inline-block;
   vertical-align: top;
-  background-color:rgba(0, 0, 0, 0.2);
+  background-color:rgba(0, 0, 0, 0.25);
 }
 
 #icon-box #car {
